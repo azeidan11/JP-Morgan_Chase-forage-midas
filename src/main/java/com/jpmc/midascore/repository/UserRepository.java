@@ -1,8 +1,10 @@
 package com.jpmc.midascore.repository;
 
 import com.jpmc.midascore.entity.UserRecord;
-import org.springframework.data.repository.CrudRepository;
+import com.jpmc.midascore.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<UserRecord, Long> {
-    UserRecord findById(long id);
+public interface UserRepository extends JpaRepository<User, Long> {
+
+  void save(UserRecord userRecord);
 }
